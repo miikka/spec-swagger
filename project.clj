@@ -9,7 +9,6 @@
   :codeina {:target "doc"
             :src-uri "http://github.com/metosin/spec-swagger/blob/master/"
             :src-uri-prefix "#L"}
-
   :profiles {:dev {:plugins [[jonase/eastwood "0.2.3"]
                              [funcool/codeina "0.5.0"]]
                    :jvm-opts ^:replace ["-server"]
@@ -20,8 +19,12 @@
                                   [org.clojure/test.check "0.9.0"]
                                   [org.clojure/tools.namespace "0.2.11"]
                                   [com.gfredericks/test.chuck "0.2.7"]
-                                  [metosin/scjsv "0.4.0"]]}
+                                  [juxt/iota "0.2.3"]
+                                  [metosin/scjsv "0.4.0"]
+                                  [metosin/ring-http-response "0.8.1"]
+                                  [ring/ring-mock "0.3.0"]]}
              :perf {:jvm-opts ^:replace ["-server"]}}
+  :deploy-repositories [["releases" :clojars]]
   :aliases {"all" ["with-profile" "dev"]
             "perf" ["with-profile" "default,dev,perf"]
             "test-clj" ["all" "do" ["test"] ["check"]]})
