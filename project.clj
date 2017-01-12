@@ -5,7 +5,8 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"
             :distribution :repo
             :comments "same as Clojure"}
-  :dependencies [[metosin/spec-tools "0.1.0-SNAPSHOT"]]
+  :dependencies [[metosin/spec-tools "0.1.0-SNAPSHOT"]
+                 [ring/ring-spec "0.0.2"]]
   :codeina {:target "doc"
             :src-uri "https://github.com/metosin/spec-swagger/blob/master/"
             :src-uri-prefix "#L"}
@@ -20,8 +21,10 @@
                                   [org.clojure/test.check "0.9.0"]
                                   [org.clojure/tools.namespace "0.2.11"]
                                   [com.gfredericks/test.chuck "0.2.7"]
+                                  [metosin/ring-http-response "0.8.1"]
+                                  [metosin/ring-swagger "0.22.14"]
                                   [metosin/scjsv "0.4.0"]
-                                  [metosin/ring-swagger "0.22.14"]]}
+                                  [ring/ring-mock "0.3.0"]]}
              :perf {:jvm-opts ^:replace ["-server"]}}
   :aliases {"all" ["with-profile" "dev"]
             "perf" ["with-profile" "default,dev,perf"]
